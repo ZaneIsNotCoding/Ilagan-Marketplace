@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+@include __DIR__ . '/../include/config.php';
 
 if(isset($_POST['add_to_cart'])){
 
@@ -34,7 +34,7 @@ if(isset($_POST['add_to_cart'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
    
@@ -66,7 +66,7 @@ if(isset($message)){
 
       <form action="" method="post">
          <div class="box">
-            <img src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
+            <img src="../uploadimage/<?php echo $fetch_product['image']; ?>" alt="">
             <h3><?php echo $fetch_product['name']; ?></h3>
             <div class="price">$<?php echo $fetch_product['price']; ?>/-</div>
             <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
@@ -87,7 +87,7 @@ if(isset($message)){
 </div>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

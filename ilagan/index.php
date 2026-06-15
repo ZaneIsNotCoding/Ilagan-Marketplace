@@ -12,7 +12,7 @@
     <header>
         <nav>
             <div class="logo-search">
-                <img src="../uploadimage/headlogo.png" alt="" class="headlogo">
+                <img src="image/headlogo.png" alt="" class="headlogo">
                 <a href="#" class="logo">Ilagan Marketplace</span></a>
                 <div class="search-box">
                     <input type="search" placeholder="Search Here...">

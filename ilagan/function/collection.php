@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require __DIR__ . '/../include/db.php';
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -59,12 +59,12 @@ if (isset($_POST['add_to_cart'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/collect.css">
+    <link rel="stylesheet" href="../css/collect.css">
 </head>
 <body>
 
 <header>
-    <img src="image/imglogo.png" alt="" class="headlogo">
+    <img src="../image/imglogo.png" alt="" class="headlogo">
     <nav>
         <?php
         $select_rows = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');
@@ -107,7 +107,7 @@ if (isset($_POST['add_to_cart'])) {
             ?>
             <form action="" method="post">
                 <div class="box">
-                    <img src="uploadimage/<?php echo $fetch_product['image']; ?>" alt="">
+                    <img src="../uploadimage/<?php echo $fetch_product['image']; ?>" alt="">
                     <h3><?php echo $fetch_product['name']; ?></h3>
                     <h4><?php echo $fetch_product['description']; ?></h4>
                     <div class="stars">
@@ -169,7 +169,7 @@ if (isset($_POST['add_to_cart'])) {
 </div>
 
 <!-- custom js file link -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-@include 'db.php';
+@include __DIR__ . '/../include/db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: sign_in.php');
@@ -53,13 +53,13 @@ $product_out_of_stock = anyProductOutOfStock($conn);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- Custom CSS File Link -->
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/collect.css">
+   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="../css/collect.css">
 </head>
 <body>
 
 <header>
-   <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+   <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
    <nav>    
       <?php
       $select_rows = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
@@ -112,7 +112,7 @@ $product_out_of_stock = anyProductOutOfStock($conn);
                while($fetch_cart = mysqli_fetch_assoc($select_cart)){
             ?>
             <tr>
-               <td><img src="uploadimage/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
+               <td><img src="../uploadimage/<?php echo $fetch_cart['image']; ?>" height="100" alt=""></td>
                <td><?php echo $fetch_cart['name']; ?></td>
                <td>₱<?php echo number_format($fetch_cart['price']); ?>/-</td>
                <td><?php echo number_format($fetch_cart['pquantity']); ?></td>
@@ -182,7 +182,7 @@ $product_out_of_stock = anyProductOutOfStock($conn);
 </div>
 
 <!-- Custom JS File Link -->
-<script src="js/script.js"> document.querySelectorAll('.qty-btn-plus, .qty-btn-minus').forEach(btn => {
+<script src="../js/script.js"> document.querySelectorAll('.qty-btn-plus, .qty-btn-minus').forEach(btn => {
         btn.addEventListener('click', function() {
             const input = this.parentElement.querySelector('.input-qty');
             let value = parseInt(input.value);

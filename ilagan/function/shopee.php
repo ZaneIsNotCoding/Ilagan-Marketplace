@@ -78,11 +78,11 @@
 <div class="container">
     <!-- Left Column -->
     <div class="left-column">
-        <img src="uploadimage/sample-watch.jpg" class="product-image" alt="Product Image">
+        <img src="../uploadimage/corn_pops.jpg" class="product-image" alt="Product Image">
         <div class="product-thumbnails">
-            <img src="uploadimage/sample-watch.jpg" alt="Thumbnail 1">
-            <img src="uploadimage/sample-watch.jpg" alt="Thumbnail 2">
-            <img src="uploadimage/sample-watch.jpg" alt="Thumbnail 3">
+            <img src="../uploadimage/corn_pops.jpg" alt="Thumbnail 1">
+            <img src="../uploadimage/corn_pops.jpg" alt="Thumbnail 2">
+            <img src="../uploadimage/corn_pops.jpg" alt="Thumbnail 3">
         </div>
     </div>
     
@@ -106,10 +106,10 @@
         <div class="product-details">
             <div>Color</div>
             <div class="product-color-options">
-                <img src="uploadimage/sample-watch.jpg" alt="Silver Black">
-                <img src="uploadimage/sample-watch.jpg" alt="Silver White">
-                <img src="uploadimage/sample-watch.jpg" alt="Gold Black">
-                <img src="uploadimage/sample-watch.jpg" alt="Gold White">
+                <img src="../uploadimage/corn_pops.jpg" alt="Silver Black">
+                <img src="../uploadimage/corn_pops.jpg" alt="Silver White">
+                <img src="../uploadimage/corn_pops.jpg" alt="Gold Black">
+                <img src="../uploadimage/corn_pops.jpg" alt="Gold White">
             </div>
         </div>
 

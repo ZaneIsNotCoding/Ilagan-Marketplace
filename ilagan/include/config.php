@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'register';
+$db   = 'ilagan_market';
 $user = 'root'; // Use your MySQL username
 $pass = '';     // Use your MySQL password
 

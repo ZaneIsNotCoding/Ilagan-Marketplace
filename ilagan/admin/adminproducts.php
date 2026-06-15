@@ -1,6 +1,6 @@
 <?php
 
-@include 'db.php';
+@include __DIR__ . '/../include/db.php';
 
 if(isset($_POST['add_product'])){
    $p_name = $_POST['p_name'];
@@ -9,7 +9,7 @@ if(isset($_POST['add_product'])){
    $p_quantity = $_POST['p_quantity'];
    $p_image = $_FILES['p_image']['name'];
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
-   $p_image_folder = 'uploadimage/'.$p_image;
+   $p_image_folder = __DIR__ . '/../uploadimage/'.$p_image;
 
    $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, description,price,quantity, image) VALUES('$p_name',  '$p_description', '$p_price','$p_quantity',  '$p_image')") or die('query failed');
 
@@ -29,7 +29,7 @@ if(isset($_POST['add_product'])){
     $p_price = $_POST['p_price'];
     $p_image = $_FILES['p_image']['name'];
     $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
-    $p_image_folder = 'uploadimage/'.$p_image;
+    $p_image_folder = __DIR__ . '/../uploadimage/'.$p_image;
  
     $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, description,price, image) VALUES('$p_name',  '$p_description', '$p_price', '$p_image')") or die('query failed');
  
@@ -60,7 +60,7 @@ if(isset($_POST['add_product'])){
     $update_p_price = $_POST['update_p_price'];
     $update_p_image = $_FILES['update_p_image']['name'];
     $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    $update_p_image_folder = 'image/'.$update_p_image;
+    $update_p_image_folder = __DIR__ . '/../uploadimage/'.$update_p_image;
  
     $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', description = ' $update_p_description', price = '$update_p_price', image = '$update_p_image' WHERE id = '$update_p_id'");
  
@@ -86,7 +86,7 @@ if(isset($_POST['add_product'])){
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Ilagan Souviner</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="css/collect.css">
+   <link rel="stylesheet" href="../css/collect.css">
 </head>
 <body>
  
@@ -94,7 +94,7 @@ if(isset($_POST['add_product'])){
 <header>
 
 
-    <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+    <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
 
     <nav>    
          <?php
@@ -149,7 +149,7 @@ if(isset($_POST['add_product'])){
 
             <form action="" method="post">
                 <div class="box">
-                    <img src="uploadimage/<?php echo $fetch_product['image']; ?>" alt="">
+                    <img src="../uploadimage/<?php echo $fetch_product['image']; ?>" alt="">
                     <h3><?php echo $fetch_product['name']; ?></h3>
                     <h4><?php echo $fetch_product['description']; ?></h4>
                     <div class="stars">
@@ -198,7 +198,7 @@ if(isset($_GET['edit'])){
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
-   <img src="uploadimage/<?php echo $fetch_edit['image']; ?>" height="200" alt="">
+   <img src="../uploadimage/<?php echo $fetch_edit['image']; ?>" height="200" alt="">
    <input type="hidden" name="update_p_id" value="<?php echo $fetch_edit['product_id']; ?>">
    <input type="text" class="box" required name="update_p_name" value="<?php echo $fetch_edit['name']; ?>">
    <input type="text" class="box" required name="update_p_description" value="<?php echo $fetch_edit['description']; ?>">
@@ -254,7 +254,7 @@ if(isset($_GET['edit'])){
 </div>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>

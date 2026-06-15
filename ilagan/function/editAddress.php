@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include 'db.php'; 
+include __DIR__ . '/../include/db.php'; 
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: sign_in.php');
@@ -129,13 +129,13 @@ if (isset($_POST['save_btn'])) {
     <!-- Font Awesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS File Link -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/edit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/edit.css">
 </head>
 <body>
 
 <header>
-    <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+    <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
     <nav>    
         <?php
         $select_rows = mysqli_query($conn, "SELECT * FROM `cart`") or die('query failed');

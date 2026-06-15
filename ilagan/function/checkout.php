@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session
-@include 'db.php';
+@include __DIR__ . '/../include/db.php';
 
 if(isset($_GET['delete_all'])){
    // Make sure to sanitize your input
@@ -89,14 +89,14 @@ if(isset($_POST['order_btn'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
    <!-- Custom CSS file link -->
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="css/collect.css">
+   <link rel="stylesheet" href="../css/style.css">
+   <link rel="stylesheet" href="../css/collect.css">
 
 </head>
 <body>
 
 <header>
-   <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+   <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
    <nav>
    <?php
    // Ensure you have the user_id to fetch the cart
@@ -250,6 +250,6 @@ if(isset($_POST['order_btn'])){
    </div>
 </div>
 
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include __DIR__ . '/../include/db.php';
 
 // Redirect to login page if user is not logged in
 if (!isset($_SESSION['user_id'])) {
@@ -50,8 +50,8 @@ $user_id = $_SESSION['user_id']; // Get the logged-in user id
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="css/display.css">
-    <link rel="stylesheet" href="css/collect.css">
+    <link rel="stylesheet" href="../css/display.css">
+    <link rel="stylesheet" href="../css/collect.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .nav-tabs {
@@ -76,7 +76,7 @@ $user_id = $_SESSION['user_id']; // Get the logged-in user id
 <body>
 
 <header>
-    <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+    <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
     <nav>
         <?php
         $select_rows = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');

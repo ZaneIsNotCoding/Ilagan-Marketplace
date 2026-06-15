@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db.php';
+require __DIR__ . '/../include/db.php';
 
 if (isset($_POST["submit"])) {
     $mail = $_POST["email"];
@@ -48,7 +48,7 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/sign_in.css">
+    <link rel="stylesheet" href="../css/sign_in.css">
 </head>
 <body>
    <div class="container">

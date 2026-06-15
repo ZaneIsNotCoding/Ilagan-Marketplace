@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include __DIR__ . '/../include/db.php';
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -28,12 +28,12 @@ if (isset($_GET['remove'])) {
 
    <!-- Font Awesome CDN Link -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="css/profile.css">
+   <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
 
 <header>
-    <a href="collection.php"><img src="image/imglogo.png" alt="" class="headlogo"></a>
+    <a href="collection.php"><img src="../image/imglogo.png" alt="" class="headlogo"></a>
     <nav>    
         <?php
         $select_rows = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = '$user_id'") or die('Query failed');
@@ -83,7 +83,7 @@ if (isset($_GET['remove'])) {
             <div class="box">
                 <h6 class="edit"><a href="profile_edit.php">Edit Profile</a></h6>
                 <h1>My Profile</h1>
-                <img src="uploadimage/<?php echo $fetch_product['image']; ?>" alt="Profile Image">
+                <img src="../uploadimage/<?php echo $fetch_product['image']; ?>" alt="Profile Image">
                 <h4>Username: <?php echo $fetch_product['username']; ?></h4>
                 <h4>Name: <?php echo $fetch_product['fname']; ?>  <?php echo $fetch_product['lname']; ?></h4>
                 <h4>Email: <?php echo $fetch_product['email']; ?></h4>
@@ -165,7 +165,7 @@ if (isset($_GET['remove'])) {
 </div>
 
 <!-- Custom JS File Link -->
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </body>
 </html>
